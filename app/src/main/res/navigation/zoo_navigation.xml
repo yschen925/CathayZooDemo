@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.ysc.cathayzoodemo.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_areaFragment"
+            app:destination="@id/areaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaFragment"
+        android:name="com.example.ysc.cathayzoodemo.ui.area.AreaFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_area" >
+        <action
+            android:id="@+id/action_areaFragment_to_plantFragment"
+            app:destination="@id/plantFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantFragment"
+        android:name="com.example.ysc.cathayzoodemo.ui.plant.PlantFragment"
+        android:label="{plant_name_ch}"
+        tools:layout="@layout/fragment_plant">
+        <argument
+            android:name="area_name"
+            app:argType="string" />
+        <argument
+            android:name="plant_name_ch"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
